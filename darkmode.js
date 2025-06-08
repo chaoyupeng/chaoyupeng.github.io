@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightModeText = document.getElementById('lightModeText');
   const darkModeText = document.getElementById('darkModeText');
 
-  // Check for saved theme preference, default to light
-  const isDarkMode = localStorage.getItem('darkMode') === 'true';
+  // Check for saved theme preference, default to dark
+  const isDarkMode = localStorage.getItem('darkMode') !== 'false';
 
   function updateSliderUI(isDark) {
     if (isDark) {

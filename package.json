@@ -2,9 +2,9 @@
   "name": "chaoyupeng.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server --open=src"
   },
   "repository": {
     "type": "git",
@@ -13,13 +13,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/chaoyupeng/chaoyupeng.github.io/issues"
   },
   "homepage": "https://github.com/chaoyupeng/chaoyupeng.github.io#readme",
-  "dependencies": {
-    "lit": "^3.3.0",
-    "tailwindcss": "^4.1.8"
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 }

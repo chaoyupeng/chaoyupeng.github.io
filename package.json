@@ -2,9 +2,9 @@
   "name": "chaoyupeng.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
+  "main": "index.html",
   "scripts": {
-    "start": "live-server --open=src"
+    "start": "live-server"
   },
   "repository": {
     "type": "git",

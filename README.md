@@ -4,8 +4,10 @@ A simple and modern personal website built with HTML, Tailwind CSS, and vanilla 
 
 ## Project Structure
 
-- `src/index.html` - Main HTML file
-- `src/darkmode.js` - JavaScript for dark/light mode toggle
+- `index.html` - Main HTML file
+- `darkmode.js` - JavaScript for dark/light mode toggle
+- `categories.js` - JavaScript for category selection
+- `background.jpg` - Background image for the website
 
 ## Features
 
@@ -16,8 +18,7 @@ A simple and modern personal website built with HTML, Tailwind CSS, and vanilla 
 ## Getting Started
 
 1. Clone the repository
-2. Run `npm install` to install dependencies
-3. Run `npm start` to start the development server
+2. Open `index.html` in your browser
 
 ## Technologies Used
 

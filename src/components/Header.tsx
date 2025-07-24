@@ -6,6 +6,34 @@ export class Header extends LitElement {
   @state()
   private theme: 'light' | 'dark' = 'light'
 
+  connectedCallback() {
+    super.connectedCallback()
+    // Initialize theme from localStorage or default to light
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
+    this.theme = savedTheme || 'light'
+    this.applyTheme()
+  }
+
+  private applyTheme() {
+    // Apply theme to document root
+    document.documentElement.classList.toggle('dark', this.theme === 'dark')
+    
+    // Dispatch theme change event
+    window.dispatchEvent(new CustomEvent('theme-change', { 
+      detail: { theme: this.theme } 
+    }))
+    
+    // Save theme to localStorage
+    localStorage.setItem('theme', this.theme)
+    
+    // Apply theme to this component
+    if (this.theme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    } else {
+      this.removeAttribute('theme')
+    }
+  }
+
   static styles = css`
     :host {
       display: block;
@@ -137,8 +165,7 @@ export class Header extends LitElement {
 
   private toggleTheme() {
     this.theme = this.theme === 'light' ? 'dark' : 'light'
-    this.setAttribute('theme', this.theme)
-    document.documentElement.classList.toggle('dark', this.theme === 'dark')
+    this.applyTheme()
   }
 
   render() {

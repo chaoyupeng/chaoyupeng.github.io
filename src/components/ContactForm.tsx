@@ -24,6 +24,32 @@ export class ContactForm extends LitElement {
   @state()
   private isSubmitting = false
 
+  connectedCallback() {
+    super.connectedCallback()
+    window.addEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+    
+    // Apply initial theme
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback()
+    window.removeEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+  }
+
+  private handleThemeChange(event: Event) {
+    const customEvent = event as CustomEvent
+    const theme = customEvent.detail.theme
+    if (theme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    } else {
+      this.removeAttribute('theme')
+    }
+  }
+
   static styles = css`
     .container {
       backdrop-filter: blur(10px);

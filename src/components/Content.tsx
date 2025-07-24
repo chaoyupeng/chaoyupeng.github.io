@@ -1,12 +1,38 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { CategoryType } from '../App.js'
-import './ContactForm.js'
+import type { CategoryType } from '../App.tsx'
+import './ContactForm.tsx'
 
 @customElement('app-content')
 export class Content extends LitElement {
   @property({ type: String })
   activeCategory: CategoryType = 'me'
+
+  connectedCallback() {
+    super.connectedCallback()
+    window.addEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+    
+    // Apply initial theme
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback()
+    window.removeEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+  }
+
+  private handleThemeChange(event: Event) {
+    const customEvent = event as CustomEvent
+    const theme = customEvent.detail.theme
+    if (theme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    } else {
+      this.removeAttribute('theme')
+    }
+  }
 
   static styles = css`
     :host {

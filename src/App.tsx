@@ -1,9 +1,9 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-import './components/Header.js'
-import './components/Categories.js'
-import './components/Content.js'
-import './components/Profile.js'
+import './components/Header.tsx'
+import './components/Categories.tsx'
+import './components/Content.tsx'
+import './components/Profile.tsx'
 import './App.css'
 
 export type CategoryType = 'me' | 'ai-ml' | 'ideas' | 'contact'
@@ -12,6 +12,33 @@ export type CategoryType = 'me' | 'ai-ml' | 'ideas' | 'contact'
 export class App extends LitElement {
   @state()
   private activeCategory: CategoryType = 'me'
+
+  connectedCallback() {
+    super.connectedCallback()
+    // Listen for theme changes
+    window.addEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+    
+    // Apply initial theme
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback()
+    window.removeEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+  }
+
+  private handleThemeChange(event: Event) {
+    const customEvent = event as CustomEvent
+    const theme = customEvent.detail.theme
+    if (theme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    } else {
+      this.removeAttribute('theme')
+    }
+  }
 
   static styles = css`
     .min-h-screen {

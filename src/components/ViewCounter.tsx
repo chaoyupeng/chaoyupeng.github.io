@@ -32,6 +32,28 @@ export class ViewCounter extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.updateViewCount()
+    window.addEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+    
+    // Apply initial theme
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback()
+    window.removeEventListener('theme-change', this.handleThemeChange.bind(this) as EventListener)
+  }
+
+  private handleThemeChange(event: Event) {
+    const customEvent = event as CustomEvent
+    const theme = customEvent.detail.theme
+    if (theme === 'dark') {
+      this.setAttribute('theme', 'dark')
+    } else {
+      this.removeAttribute('theme')
+    }
   }
 
   private updateViewCount() {

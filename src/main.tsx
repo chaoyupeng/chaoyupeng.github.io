@@ -1,2 +1,2 @@
-import './App.tsx'
+import './App.js'
 import './index.css'

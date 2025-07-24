@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { CategoryType } from '../App.tsx'
+import type { CategoryType } from '../App.js'
 
 @customElement('app-categories')
 export class Categories extends LitElement {

@@ -1,9 +1,9 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-import './components/Header.tsx'
-import './components/Categories.tsx'
-import './components/Content.tsx'
-import './components/Profile.tsx'
+import './components/Header.js'
+import './components/Categories.js'
+import './components/Content.js'
+import './components/Profile.js'
 import './App.css'
 
 export type CategoryType = 'me' | 'ai-ml' | 'ideas' | 'contact'

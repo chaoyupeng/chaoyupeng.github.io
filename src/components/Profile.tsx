@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import './ViewCounter.tsx'
+import './ViewCounter.js'
 
 @customElement('app-profile')
 export class Profile extends LitElement {

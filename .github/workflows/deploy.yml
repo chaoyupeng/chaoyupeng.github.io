@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'  # Updated to 22 for Vite 7 compatibility
           cache: 'npm'
           
       - name: Install dependencies

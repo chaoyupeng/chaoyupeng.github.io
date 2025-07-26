@@ -1,6 +1,6 @@
 /* Custom styles for background and glass effect */
 body {
-  background-image: url('/background_day.jpg');
+  background-image: url('./assets/background_day.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -10,7 +10,7 @@ body {
 
 /* Dark theme background */
 html.dark body {
-  background-image: url('/background_night.jpg');
+  background-image: url('./assets/background_night.jpg');
 }
 
 /* Matte texture styles */

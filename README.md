@@ -19,7 +19,7 @@ A modern, high-performance personal blog built with Lit Web Components, featurin
 - **Frontend Framework:** [Lit](https://lit.dev/) (Web Components)
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Language:** TypeScript
-- **Styling:** Tailwind CSS (CDN) + Custom CSS-in-JS
+- **Styling:** Tailwind CSS (CDN for simplicity) + Custom CSS-in-JS
 - **Deployment:** GitHub Pages with GitHub Actions
 - **Node.js:** v22+ (required for Vite 7)
 
@@ -124,7 +124,17 @@ Automated deployment to GitHub Pages via GitHub Actions:
 - **🖼️ Optimized Images** - Compressed assets for fast loading
 - **⚡ Fast Build Times** - Vite's lightning-fast HMR
 - **🗜️ CSS Optimization** - Removed unused styles and dependencies
-- **🌐 CDN Assets** - Tailwind CSS served from CDN
+- **🌐 CDN Assets** - Tailwind CSS served from CDN (note: production warning expected)
+
+## ⚠️ About Tailwind CDN Usage
+
+This project uses Tailwind CSS via CDN for simplicity and fast development. While Tailwind shows a production warning, this approach is acceptable for:
+
+- **Personal blogs** like this project
+- **Prototypes** and quick development
+- **Small sites** with minimal custom CSS
+
+For larger production applications, consider installing Tailwind locally via PostCSS. The current setup provides excellent performance and maintainability for this use case.
 
 ## 🤝 Contributing
 

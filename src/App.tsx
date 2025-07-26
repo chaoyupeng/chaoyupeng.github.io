@@ -80,7 +80,7 @@ export class App extends LitElement {
 
   render() {
     return html`
-      <div class="min-h-screen bg-cover bg-center bg-fixed" style="background-image: url('./background.jpg')">
+      <div class="min-h-screen bg-cover bg-center bg-fixed">
         <app-header></app-header>
         <div class="flex flex-row justify-between px-4 pb-4 min-h-screen space-x-4">
           <app-categories 

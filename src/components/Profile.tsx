@@ -71,13 +71,13 @@ export class Profile extends LitElement {
       width: 9rem;
       height: 9rem;
       border-radius: 50%;
-      border: 4px solid white;
+      border: 4px solid #374151;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       object-fit: cover;
     }
     
     :host([theme="dark"]) .avatar {
-      border-color: #374151;
+      border-color: white;
     }
     
     .name {
@@ -133,22 +133,22 @@ export class Profile extends LitElement {
     
     .service-icon-container {
       padding: 0.25rem;
-      background: #e5e7eb;
+      background: #374151;
       border-radius: 50%;
     }
     
     :host([theme="dark"]) .service-icon-container {
-      background: #374151;
+      background: #e5e7eb;
     }
     
     .service-icon svg {
       width: 1.25rem;
       height: 1.25rem;
-      color: #4b5563;
+      color: #9ca3af;
     }
     
     :host([theme="dark"]) .service-icon svg {
-      color: #9ca3af;
+      color: #4b5563;
     }
   `
 
@@ -161,7 +161,7 @@ export class Profile extends LitElement {
         </div>
         
         <img 
-          src="./Avatar.jpeg" 
+          src="/Avatar.jpeg" 
           alt="Profile Picture" 
           class="avatar"
         />

@@ -1,10 +1,44 @@
 /* Custom styles for background and glass effect */
 body {
-  background-image: url('./background.jpg');
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Background container for smooth transitions */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 100vh;
+  z-index: -1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Day background (default) */
+body::before {
+  background-image: url('/background_day.jpg');
+  opacity: 1;
+}
+
+/* Night background (for dark theme) */
+body::after {
+  background-image: url('/background_night.jpg');
+  opacity: 0;
+}
+
+/* Dark theme - fade in night background */
+html.dark body::before {
+  opacity: 0;
+}
+
+html.dark body::after {
+  opacity: 1;
 }
 
 /* Matte texture styles */

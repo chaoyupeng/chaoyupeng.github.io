@@ -70,8 +70,22 @@ export class Categories extends LitElement {
     }
     
     .icon {
-      color: #eab308;
+      color: #1f2937;
       margin-right: 0.5rem;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+    
+    .icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      transition: stroke 0.3s ease;
+    }
+    
+    :host([theme="dark"]) .icon {
+      color: white;
     }
     
     .title {
@@ -94,7 +108,7 @@ export class Categories extends LitElement {
       margin-bottom: 0.5rem;
       border-radius: 0.5rem;
       cursor: pointer;
-      border-left: 4px solid transparent;
+      border-left: 1px solid transparent;
       transition: all 0.3s, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
     
@@ -104,8 +118,8 @@ export class Categories extends LitElement {
     }
     
     .category-item.active {
-      border-left-color: #3b82f6;
-      background: rgba(59, 130, 246, 0.15);
+      border-left-color: #000000;
+      background: rgba(0, 0, 0, 0.1);
     }
     
     :host([theme="dark"]) .category-item {
@@ -120,7 +134,8 @@ export class Categories extends LitElement {
     }
     
     :host([theme="dark"]) .category-item.active {
-      background: rgba(59, 130, 246, 0.2);
+      border-left-color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
     }
     
     .category-label {
@@ -144,7 +159,11 @@ export class Categories extends LitElement {
     return html`
       <div class="container">
         <div class="header">
-          <span class="icon">📋</span>
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24" height="24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>
+          </span>
           <span class="title">Categories</span>
         </div>
         

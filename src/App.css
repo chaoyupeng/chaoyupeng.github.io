@@ -1,4 +1,4 @@
-/* Custom styles for background and glass effect */
+/* Optimized background styles for theme switching */
 body {
   position: relative;
   min-height: 100vh;
@@ -40,91 +40,4 @@ body::after {
 
 .dark body::after {
   opacity: 1;
-}
-
-/* Matte texture styles */
-.matte-texture {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='0.03' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.dark .matte-texture {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.03' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-}
-
-.glass {
-  backdrop-filter: blur(12px) saturate(120%);
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.dark .glass {
-  backdrop-filter: blur(12px) saturate(120%);
-  background-color: rgba(31, 41, 55, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.category-glass {
-  backdrop-filter: blur(8px) saturate(120%);
-  background-color: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
-
-.category-glass:hover {
-  background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-}
-
-.dark .category-glass {
-  background-color: rgba(31, 41, 55, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.dark .category-glass:hover {
-  background-color: rgba(31, 41, 55, 0.85);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.active-category {
-  background-color: rgba(255, 255, 255, 0.7) !important;
-  border-left: 4px solid rgba(59, 130, 246, 0.8) !important;
-}
-
-.dark .active-category {
-  background-color: rgba(31, 41, 55, 0.7) !important;
-  border-left: 4px solid rgba(96, 165, 250, 0.8) !important;
-}
-
-/* Theme slider styles */
-.theme-slider {
-  background-color: #e2e8f0;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.dark .theme-slider {
-  background-color: #1f2937;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.slider-circle {
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.dark .slider-circle {
-  background-color: #374151;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.slider-text {
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  text-align: center;
-  font-size: 0.875rem;
 }

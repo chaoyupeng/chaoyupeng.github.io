@@ -19,12 +19,12 @@ export class ViewCounter extends LitElement {
       color: #374151;
       display: flex;
       align-items: center;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     .icon svg {
       stroke: currentColor;
-      transition: stroke 0.3s ease;
+      transition: stroke 0.6s ease;
     }
     
     :host([theme="dark"]) .icon {
@@ -34,7 +34,7 @@ export class ViewCounter extends LitElement {
     .count {
       color: #374151;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .count {

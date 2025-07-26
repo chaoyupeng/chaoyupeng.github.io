@@ -50,7 +50,7 @@ export class Header extends LitElement {
       padding: 1rem;
       margin: 1rem 1rem 1rem 1rem;
       border-radius: 0.5rem;
-      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
     }
     
     :host([theme="dark"]) header {
@@ -63,7 +63,7 @@ export class Header extends LitElement {
       font-size: 1.125rem;
       font-weight: bold;
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .title {
@@ -87,7 +87,7 @@ export class Header extends LitElement {
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.6s ease, background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
       outline: none;
     }
     
@@ -121,7 +121,7 @@ export class Header extends LitElement {
     .icon svg {
       width: 24px;
       height: 24px;
-      transition: stroke 0.3s ease;
+      transition: stroke 0.6s ease;
     }
     
     /* Moon icon (shown in dark mode) - white */

@@ -48,7 +48,7 @@ export class Content extends LitElement {
       padding: 1.5rem;
       border-radius: 0.5rem;
       margin-bottom: 1rem;
-      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
     }
     
     :host([theme="dark"]) .content-container {
@@ -68,7 +68,7 @@ export class Content extends LitElement {
       font-size: 1.125rem;
       font-weight: 500;
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .title {
@@ -84,7 +84,7 @@ export class Content extends LitElement {
     .sort-active {
       font-weight: 500;
       color: #374151;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .sort-active {
@@ -93,7 +93,7 @@ export class Content extends LitElement {
     
     .sort-inactive {
       color: #9ca3af;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .sort-inactive {
@@ -105,7 +105,7 @@ export class Content extends LitElement {
       font-weight: bold;
       margin-bottom: 1rem;
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .content-title {
@@ -117,7 +117,7 @@ export class Content extends LitElement {
       font-weight: bold;
       margin-bottom: 0.5rem;
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .content-subtitle {
@@ -128,7 +128,7 @@ export class Content extends LitElement {
       color: #6b7280;
       font-size: 0.875rem;
       margin-bottom: 0.75rem;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .date {
@@ -138,7 +138,7 @@ export class Content extends LitElement {
     .description {
       margin-bottom: 1rem;
       color: #374151;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .description {

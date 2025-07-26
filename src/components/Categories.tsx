@@ -54,7 +54,7 @@ export class Categories extends LitElement {
       padding: 1rem;
       border-radius: 0.5rem;
       margin-bottom: 1rem;
-      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
     }
     
     :host([theme="dark"]) .container {
@@ -74,14 +74,14 @@ export class Categories extends LitElement {
       margin-right: 0.5rem;
       display: flex;
       align-items: center;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     .icon svg {
       width: 24px;
       height: 24px;
       stroke: currentColor;
-      transition: stroke 0.3s ease;
+      transition: stroke 0.6s ease;
     }
     
     :host([theme="dark"]) .icon {
@@ -92,7 +92,7 @@ export class Categories extends LitElement {
       font-size: 1.125rem;
       font-weight: 500;
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .title {
@@ -109,7 +109,7 @@ export class Categories extends LitElement {
       border-radius: 0.5rem;
       cursor: pointer;
       border-left: 1px solid transparent;
-      transition: all 0.3s, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.6s, background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
     }
     
     .category-item:hover {
@@ -140,7 +140,7 @@ export class Categories extends LitElement {
     
     .category-label {
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .category-label {

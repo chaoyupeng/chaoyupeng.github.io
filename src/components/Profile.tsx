@@ -44,7 +44,7 @@ export class Profile extends LitElement {
       padding: 1.5rem;
       border-radius: 0.5rem;
       text-align: center;
-      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
     }
     
     :host([theme="dark"]) .container {
@@ -64,14 +64,14 @@ export class Profile extends LitElement {
       margin-right: 0.5rem;
       display: flex;
       align-items: center;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     .icon svg {
       width: 24px;
       height: 24px;
       stroke: currentColor;
-      transition: stroke 0.3s ease;
+      transition: stroke 0.6s ease;
     }
     
     :host([theme="dark"]) .icon {
@@ -82,7 +82,7 @@ export class Profile extends LitElement {
       font-size: 1.125rem;
       font-weight: 500;
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .title {
@@ -97,6 +97,7 @@ export class Profile extends LitElement {
       border: 4px solid #374151;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       object-fit: cover;
+      transition: border-color 0.6s ease;
     }
     
     :host([theme="dark"]) .avatar {
@@ -108,7 +109,7 @@ export class Profile extends LitElement {
       font-weight: bold;
       margin-bottom: 0.25rem;
       color: #1f2937;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .name {
@@ -118,7 +119,7 @@ export class Profile extends LitElement {
     .role {
       color: #4b5563;
       margin-bottom: 1.5rem;
-      transition: color 0.3s ease;
+      transition: color 0.6s ease;
     }
     
     :host([theme="dark"]) .role {

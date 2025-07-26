@@ -23,13 +23,13 @@ body::after {
 
 /* Light theme background (day) */
 body::before {
-  background-image: url('./assets/background_day.jpg');
+  background-image: url('/background_day.jpg');
   opacity: 1;
 }
 
 /* Dark theme background (night) */
 body::after {
-  background-image: url('./assets/background_night.jpg');
+  background-image: url('/background_night.jpg');
   opacity: 0;
 }
 

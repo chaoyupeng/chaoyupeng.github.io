@@ -40,21 +40,30 @@ export class Header extends LitElement {
     }
     
     header {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px) saturate(120%);
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem;
       margin: 1rem 1rem 1rem 1rem;
       border-radius: 0.5rem;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    :host([theme="dark"]) header {
+      background: rgba(31, 41, 55, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .title {
       font-size: 1.125rem;
       font-weight: bold;
       color: #1f2937;
+      transition: color 0.3s ease;
     }
     
     :host([theme="dark"]) .title {
@@ -69,20 +78,22 @@ export class Header extends LitElement {
     .theme-button {
       width: 3rem;
       height: 3rem;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(12px) saturate(120%);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       outline: none;
     }
     
     .theme-button:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
       transform: scale(1.05);
     }
     
@@ -91,12 +102,14 @@ export class Header extends LitElement {
     }
     
     :host([theme="dark"]) .theme-button {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(31, 41, 55, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
     
     :host([theme="dark"]) .theme-button:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(31, 41, 55, 0.6);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     }
     
     .icon {
@@ -108,6 +121,7 @@ export class Header extends LitElement {
     .icon svg {
       width: 24px;
       height: 24px;
+      transition: stroke 0.3s ease;
     }
     
     /* Sun icon (shown in dark mode) - white */

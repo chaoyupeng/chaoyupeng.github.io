@@ -52,11 +52,19 @@ export class ContactForm extends LitElement {
 
   static styles = css`
     .container {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px) saturate(120%);
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
       padding: 1.5rem;
       border-radius: 0.5rem;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    :host([theme="dark"]) .container {
+      background: rgba(31, 41, 55, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .header {
@@ -68,6 +76,7 @@ export class ContactForm extends LitElement {
       font-weight: bold;
       color: #1f2937;
       margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
     }
     
     :host([theme="dark"]) .title {
@@ -76,6 +85,7 @@ export class ContactForm extends LitElement {
     
     .description {
       color: #4b5563;
+      transition: color 0.3s ease;
     }
     
     :host([theme="dark"]) .description {
@@ -99,6 +109,7 @@ export class ContactForm extends LitElement {
       font-weight: 500;
       color: #374151;
       margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
     }
     
     :host([theme="dark"]) .label {

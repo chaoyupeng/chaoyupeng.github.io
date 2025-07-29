@@ -861,7 +861,7 @@ export class Content extends LitElement {
             </div>
             
             <div class="posts-container">
-              ${sortedPosts.map((post, index) => {
+              ${sortedPosts.map((post) => {
                 const isExpanded = this.expandedPostId === post.id
                 const isCollapsed = this.expandedPostId !== null && this.expandedPostId !== post.id
                 const sortedPostsForNav = this.getSortedPosts()

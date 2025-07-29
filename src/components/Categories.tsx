@@ -7,8 +7,7 @@ export class Categories extends LitElement {
   @property({ type: String })
   activeCategory: CategoryType = 'me'
 
-  @state()
-  private hoveredCategory: CategoryType | null = null
+
 
   @state()
   private isContainerHovered = false
@@ -334,7 +333,6 @@ export class Categories extends LitElement {
   `
 
   private handleCategoryHover(category: CategoryType) {
-    this.hoveredCategory = category
     this.dispatchEvent(new CustomEvent('category-hover', {
       detail: { category, preview: this.categories.find(c => c.id === category)?.preview },
       bubbles: true
@@ -342,7 +340,6 @@ export class Categories extends LitElement {
   }
 
   private handleCategoryLeave() {
-    this.hoveredCategory = null
     this.dispatchEvent(new CustomEvent('category-hover-end', {
       bubbles: true
     }))

@@ -26,102 +26,30 @@ export class Content extends LitElement {
   private aiMlPosts = [
     {
       id: 1,
-      title: "Building a Real-time AI Chat Assistant",
-      description: "Exploring the implementation of a conversational AI using transformer models and WebSocket connections for real-time interactions.",
+      title: "Welcome to My Blog",
+      description: "This is a placeholder post to demonstrate the blog structure. More content will be added soon!",
       content: `
-        <h3>Introduction</h3>
-        <p>In this deep dive, we'll explore how to build a sophisticated AI chat assistant that can handle real-time conversations with users. We'll be using cutting-edge transformer models combined with WebSocket technology to create seamless, instantaneous interactions.</p>
+        <h3>Getting Started</h3>
+        <p>Welcome to my personal blog! This is a placeholder post that demonstrates the structure and functionality of the blog system.</p>
         
-        <h3>Architecture Overview</h3>
-        <p>Our system consists of three main components:</p>
+        <h3>What You Can Expect</h3>
+        <p>In the future, this blog will contain:</p>
         <ul>
-          <li><strong>Frontend WebSocket Client</strong> - Handles user input and displays responses</li>
-          <li><strong>Backend WebSocket Server</strong> - Manages connections and message routing</li>
-          <li><strong>AI Model Service</strong> - Processes messages using transformer models</li>
+          <li><strong>Technical Articles</strong> - Deep dives into AI/ML topics</li>
+          <li><strong>Project Showcases</strong> - Personal projects and experiments</li>
+          <li><strong>Learning Notes</strong> - Insights from my learning journey</li>
+          <li><strong>Industry Thoughts</strong> - Reflections on technology trends</li>
         </ul>
         
-        <h3>Implementation Details</h3>
-        <p>The core challenge was maintaining conversation context while ensuring sub-second response times. We implemented a hybrid approach using both cached responses for common queries and dynamic generation for complex requests.</p>
+        <h3>Stay Tuned</h3>
+        <p>I'm currently working on creating valuable content for this space. Check back soon for more posts!</p>
         
-        <h3>Performance Optimizations</h3>
-        <p>Key optimizations include model quantization, response caching, and connection pooling, resulting in 90% faster response times compared to traditional REST API approaches.</p>
+        <h3>Contact</h3>
+        <p>Feel free to reach out through the contact form if you'd like to connect or have any questions.</p>
       `,
-      date: new Date('2024-01-15T14:30:00'),
-      readTime: "8 min read",
-      tags: ["AI", "Chat", "WebSocket", "Transformers"]
-    },
-    {
-      id: 2,
-      title: "Computer Vision for Object Detection",
-      description: "Deep dive into YOLO v8 implementation for real-time object detection in video streams with performance optimizations.",
-      content: `
-        <h3>YOLO v8 Overview</h3>
-        <p>You Only Look Once (YOLO) v8 represents the latest evolution in real-time object detection. This version introduces significant improvements in both accuracy and speed over its predecessors.</p>
-        
-        <h3>Key Improvements</h3>
-        <ul>
-          <li><strong>Enhanced Backbone</strong> - New CSPDarknet architecture</li>
-          <li><strong>Improved Head Design</strong> - Better feature fusion mechanisms</li>
-          <li><strong>Training Optimizations</strong> - Advanced data augmentation techniques</li>
-        </ul>
-        
-        <h3>Implementation Challenges</h3>
-        <p>Working with video streams presents unique challenges including frame buffering, memory management, and maintaining consistent detection accuracy across varying lighting conditions.</p>
-        
-        <h3>Results</h3>
-        <p>Our optimized implementation achieves 60+ FPS on standard hardware while maintaining 95%+ accuracy on the COCO dataset.</p>
-      `,
-      date: new Date('2024-01-10T09:15:00'),
-      readTime: "12 min read", 
-      tags: ["Computer Vision", "YOLO", "Object Detection", "Deep Learning"]
-    },
-    {
-      id: 3,
-      title: "Machine Learning Model Deployment Strategies",
-      description: "Comparing different approaches to deploy ML models in production: from Docker containers to serverless functions.",
-      content: `
-        <h3>Deployment Landscape</h3>
-        <p>The ML deployment ecosystem has evolved rapidly, offering multiple pathways from development to production. Each approach has distinct advantages and trade-offs.</p>
-        
-        <h3>Container-Based Deployment</h3>
-        <p>Docker containers provide excellent isolation and reproducibility. They're ideal for complex models with specific dependencies and offer great scalability options with Kubernetes.</p>
-        
-        <h3>Serverless Approaches</h3>
-        <p>Functions-as-a-Service (FaaS) platforms like AWS Lambda or Google Cloud Functions excel for lightweight models with sporadic usage patterns, offering cost-effective auto-scaling.</p>
-        
-        <h3>Edge Deployment</h3>
-        <p>For latency-critical applications, deploying models directly on edge devices using frameworks like TensorFlow Lite or ONNX Runtime provides optimal performance.</p>
-        
-        <h3>Recommendations</h3>
-        <p>Choose based on your specific requirements: containers for complex models, serverless for variable workloads, and edge for real-time applications.</p>
-      `,
-      date: new Date('2024-01-05T16:45:00'),
-      readTime: "6 min read",
-      tags: ["MLOps", "Deployment", "Docker", "Serverless"]
-    },
-    {
-      id: 4,
-      title: "Understanding Attention Mechanisms in Transformers",
-      description: "A comprehensive guide to self-attention and multi-head attention mechanisms that power modern language models.",
-      content: `
-        <h3>The Attention Revolution</h3>
-        <p>Attention mechanisms have fundamentally transformed how we approach sequence modeling in deep learning. The "Attention is All You Need" paper introduced concepts that now power ChatGPT, BERT, and countless other models.</p>
-        
-        <h3>Self-Attention Mechanics</h3>
-        <p>Self-attention allows each token in a sequence to attend to all other tokens, creating rich contextual representations. The mechanism uses Query, Key, and Value matrices to compute attention weights.</p>
-        
-        <h3>Multi-Head Attention</h3>
-        <p>By running multiple attention heads in parallel, transformers can capture different types of relationships simultaneously - from syntactic patterns to semantic similarities.</p>
-        
-        <h3>Mathematical Foundation</h3>
-        <p>The attention function can be described as: Attention(Q,K,V) = softmax(QK^T/√d_k)V, where the scaling factor prevents softmax saturation in high dimensions.</p>
-        
-        <h3>Practical Applications</h3>
-        <p>Understanding attention patterns helps in model interpretability, debugging, and designing more efficient architectures for specific tasks.</p>
-      `,
-      date: new Date('2023-12-28T11:20:00'),
-      readTime: "15 min read",
-      tags: ["Transformers", "Attention", "NLP", "Theory"]
+      date: new Date('2024-01-20T10:00:00'),
+      readTime: "3 min read",
+      tags: ["Welcome", "Blog", "Placeholder", "Getting Started"]
     }
   ]
 

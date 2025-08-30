@@ -713,7 +713,7 @@ export class Content extends LitElement {
 
     .expand-indicator {
       position: absolute;
-      top: 1rem;
+      bottom: 1rem;
       right: 1rem;
       width: 24px;
       height: 24px;

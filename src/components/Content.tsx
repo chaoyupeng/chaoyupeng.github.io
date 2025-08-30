@@ -711,40 +711,7 @@ export class Content extends LitElement {
       transform: scale(0.98);
     }
 
-    .expand-indicator {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      width: 24px;
-      height: 24px;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      opacity: 0;
-    }
 
-    .post-card:hover .expand-indicator {
-      opacity: 1;
-    }
-
-    .post-card.expanded .expand-indicator {
-      opacity: 1;
-      background: rgba(59, 130, 246, 0.2);
-      transform: rotate(180deg);
-    }
-
-    :host([theme="dark"]) .expand-indicator {
-      background: rgba(96, 165, 250, 0.1);
-      border-color: rgba(96, 165, 250, 0.2);
-    }
-
-    :host([theme="dark"]) .post-card.expanded .expand-indicator {
-      background: rgba(96, 165, 250, 0.2);
-    }
 `
 
   private getContent() {
@@ -821,11 +788,7 @@ export class Content extends LitElement {
                       </div>
                     </div>
 
-                    <div class="expand-indicator">
-                      <svg width="12" height="12" fill="currentColor" viewBox="0 0 12 12">
-                        <path d="M6 8.5L2.5 5h7L6 8.5z"/>
-                      </svg>
-                    </div>
+
                     
                     <div class="expanded-content">
                       <div .innerHTML=${post.content}></div>

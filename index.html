@@ -6,26 +6,38 @@
   <meta name="theme-color" content="#f5f5f7">
   <meta name="description" content="Yupeng's personal website. Explore software projects and get in touch.">
   <title>Yupeng — Software projects</title>
+  <script>
+    (() => {
+      let saved;
+      try { saved = localStorage.getItem('theme'); } catch {}
+      document.documentElement.dataset.theme = saved === 'light' || saved === 'dark'
+        ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    })();
+  </script>
   <style>
-    :root { color-scheme:light; --page:#f5f5f7; --white:#fff; --text:#1d1d1f; --muted:#6e6e73; --line:#dedee2; --link:#0066cc; }
+    :root { color-scheme:light; --page:#f5f5f7; --card:#fff; --text:#1d1d1f; --muted:#6e6e73; --line:#dedee2; --link:#0066cc; --header:#ffffffec; --header-line:#e9e9ec; --nav:#444449; --secondary:#66666b; --card-line:#ececef; --card-shadow:#00000005; --card-shadow-hover:#0000000d; --about:#fff; --about-text:#55555a; --footer:#86868b; --footer-links:#55555a; --button:#0071e3; --button-hover:#0077ed; }
+    :root[data-theme="dark"] { color-scheme:dark; --page:#111216; --card:#1d1e24; --text:#f5f5f7; --muted:#a1a1aa; --line:#34353d; --link:#80bbff; --header:#191a20ee; --header-line:#30313a; --nav:#d0d0d6; --secondary:#b2b2bb; --card-line:#30313a; --card-shadow:#0000001a; --card-shadow-hover:#00000040; --about:#191a20; --about-text:#c8c8d0; --footer:#9999a3; --footer-links:#c4c4cd; --button:#147ce5; --button-hover:#258cf2; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; background:var(--page); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
     a { color:inherit; text-decoration:none; }
     a:focus-visible { outline:2px solid var(--link); outline-offset:5px; border-radius:3px; }
     .container { width:min(1040px,calc(100% - 48px)); margin-inline:auto; }
-    .header { background:rgba(255,255,255,.88); border-bottom:1px solid #e9e9ec; }
+    .header { background:var(--header); border-bottom:1px solid var(--header-line); }
     .header-inner { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
     .name { font-size:17px; font-weight:650; letter-spacing:-.035em; white-space:nowrap; }
-    .nav { display:flex; gap:28px; font-size:13px; color:#444449; }
+    .nav { display:flex; align-items:center; gap:28px; font-size:13px; color:var(--nav); }
     .nav a:hover, .footer a:hover { color:var(--link); }
+    .theme-toggle { width:33px; height:33px; display:grid; place-items:center; padding:0; margin-left:-8px; border:1px solid var(--line); border-radius:50%; background:transparent; color:var(--text); font:inherit; font-size:17px; line-height:1; cursor:pointer; }
+    .theme-toggle:hover { background:var(--page); }
+    .theme-toggle:focus-visible { outline:2px solid var(--link); outline-offset:3px; }
     .hero { padding:112px 0 107px; text-align:center; }
     .overline { margin:0 0 19px; color:var(--muted); font-size:14px; font-weight:600; letter-spacing:.02em; }
     h1 { margin:0 auto; max-width:850px; font-size:clamp(49px,7vw,84px); font-weight:700; line-height:1.05; letter-spacing:-.066em; }
-    .hero p:last-of-type { max-width:610px; margin:28px auto 0; color:#66666b; font-size:clamp(17px,2vw,21px); line-height:1.55; letter-spacing:-.016em; }
+    .hero p:last-of-type { max-width:610px; margin:28px auto 0; color:var(--secondary); font-size:clamp(17px,2vw,21px); line-height:1.55; letter-spacing:-.016em; }
     .hero-links { display:flex; align-items:center; justify-content:center; gap:27px; margin-top:33px; }
-    .primary { display:inline-flex; align-items:center; justify-content:center; min-height:43px; padding:0 21px; border-radius:23px; color:#fff; background:#0071e3; font-size:14px; font-weight:520; }
-    .primary:hover { background:#0077ed; }
+    .primary { display:inline-flex; align-items:center; justify-content:center; min-height:43px; padding:0 21px; border-radius:23px; color:#fff; background:var(--button); font-size:14px; font-weight:520; }
+    .primary:hover { background:var(--button-hover); }
     .quiet-link { color:var(--link); font-size:14px; }
     .quiet-link:hover { text-decoration:underline; }
     .work { padding:0 0 95px; }
@@ -33,27 +45,27 @@
     .section-heading h2 { margin:0; font-size:clamp(32px,4vw,43px); line-height:1.15; letter-spacing:-.047em; }
     .section-heading p { margin:0 0 4px; color:var(--muted); font-size:14px; }
     .repo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-    .repo { display:flex; flex-direction:column; min-height:225px; padding:29px 31px 26px; background:var(--white); border:1px solid #ececef; border-radius:20px; box-shadow:0 4px 18px #00000005; transition:transform .2s,box-shadow .2s; }
-    .repo:hover { transform:translateY(-3px); box-shadow:0 12px 32px #0000000d; }
+    .repo { display:flex; flex-direction:column; min-height:225px; padding:29px 31px 26px; background:var(--card); border:1px solid var(--card-line); border-radius:20px; box-shadow:0 4px 18px var(--card-shadow); transition:transform .2s,box-shadow .2s; }
+    .repo:hover { transform:translateY(-3px); box-shadow:0 12px 32px var(--card-shadow-hover); }
     .repo-top { display:flex; justify-content:space-between; gap:15px; align-items:start; }
     .repo h3 { margin:0; font-size:22px; line-height:1.25; letter-spacing:-.035em; overflow-wrap:anywhere; }
     .arrow { color:var(--link); font-size:20px; line-height:1; }
-    .repo p { margin:17px 0 auto; color:#66666b; font-size:15px; line-height:1.55; max-width:420px; }
-    .repo-meta { display:flex; gap:9px; align-items:center; margin-top:28px; color:#85858b; font-size:12px; }
+    .repo p { margin:17px 0 auto; color:var(--secondary); font-size:15px; line-height:1.55; max-width:420px; }
+    .repo-meta { display:flex; gap:9px; align-items:center; margin-top:28px; color:var(--muted); font-size:12px; }
     .repo-meta span + span::before { content:"·"; margin-right:9px; }
     .all-repos { display:inline-block; margin-top:25px; color:var(--link); font-size:14px; }
     .all-repos:hover { text-decoration:underline; }
-    .about-wrap { background:#fff; }
+    .about-wrap { background:var(--about); }
     .about { display:grid; grid-template-columns:1fr 1.2fr; gap:80px; padding:90px 0; }
     .about h2 { margin:0; font-size:clamp(32px,4vw,43px); letter-spacing:-.047em; }
-    .about-text { color:#55555a; font-size:19px; line-height:1.58; letter-spacing:-.02em; }
+    .about-text { color:var(--about-text); font-size:19px; line-height:1.58; letter-spacing:-.02em; }
     .about-text p { margin:0 0 18px; }
     .about-text p:last-of-type { margin-bottom:27px; }
     .about-links { display:flex; flex-wrap:wrap; gap:24px; }
-    .footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; padding:34px 0 39px; color:#86868b; font-size:12px; }
-    .footer-links { display:flex; gap:23px; color:#55555a; }
+    .footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; padding:34px 0 39px; color:var(--footer); font-size:12px; }
+    .footer-links { display:flex; gap:23px; color:var(--footer-links); }
     @media(max-width:760px) { .hero{padding:92px 0 86px}.repo-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:18px;padding:73px 0}.section-heading{align-items:start;flex-direction:column;gap:8px}.section-heading p{margin:0}.repo{min-height:205px} }
-    @media(max-width:480px) { .container{width:calc(100% - 36px)}.nav{gap:17px}.nav a:nth-child(2){display:none}.hero{padding:78px 0 77px}.hero-links{gap:20px}.repo{padding:25px}.about-text{font-size:17px}.footer{flex-direction:column} }
+    @media(max-width:480px) { .container{width:calc(100% - 36px)}.nav{gap:17px}.nav a:nth-child(2),.nav a:nth-child(3){display:none}.hero{padding:78px 0 77px}.hero-links{gap:20px}.repo{padding:25px}.about-text{font-size:17px}.footer{flex-direction:column} }
     @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *{transition:none!important} }
   </style>
 </head>
@@ -61,7 +73,7 @@
   <header class="header">
     <div class="container header-inner">
       <a class="name" href="#top">Yupeng Chao</a>
-      <nav class="nav" aria-label="Main navigation"><a href="#projects">Projects</a><a href="#about">About</a><a href="https://www.linkedin.com/in/yupeng-chao/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></nav>
+      <nav class="nav" aria-label="Main navigation"><a href="#projects">Projects</a><a href="#about">About</a><a href="https://www.linkedin.com/in/yupeng-chao/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span id="theme-icon" aria-hidden="true">☾</span></button></nav>
     </div>
   </header>
 
@@ -91,6 +103,31 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    const themeButton = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    function updateThemeControl() {
+      const dark = document.documentElement.dataset.theme === 'dark';
+      const label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+      themeButton.setAttribute('aria-label', label);
+      themeButton.title = label;
+      themeIcon.textContent = dark ? '☀' : '☾';
+      themeColor.content = dark ? '#111216' : '#f5f5f7';
+    }
+    updateThemeControl();
+    themeButton.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch {}
+      updateThemeControl();
+    });
+    matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      let saved;
+      try { saved = localStorage.getItem('theme'); } catch {}
+      if (saved === 'light' || saved === 'dark') return;
+      document.documentElement.dataset.theme = event.matches ? 'dark' : 'light';
+      updateThemeControl();
+    });
     // Keep the visible project list current. The HTML cards above remain if the API is unavailable.
     fetch('https://api.github.com/users/chaoyupeng/repos?per_page=100&sort=updated', { headers: { Accept: 'application/vnd.github+json' } })
       .then(response => { if (!response.ok) throw new Error('GitHub API unavailable'); return response.json(); })
